@@ -32,10 +32,10 @@ public class Player_Controler : MonoBehaviour
         {
             vertical = Input.GetAxis("Vertical");
         }
-        if (vertical == 0)
-        {
-            horizontal = Input.GetAxis("Horizontal");
-        }
+        //if (vertical == 0)
+        //{
+        //    horizontal = Input.GetAxis("Horizontal");
+        //}
         Vector3 movimiento = new Vector3(horizontal, vertical, 0f) * velocidad * Time.deltaTime;  //Vector de movimiento 
         transform.Translate(movimiento, Space.World); //Movimiento del Personaje
         // Mantener presionado el botón izquierdo del ratón
@@ -66,6 +66,10 @@ public class Player_Controler : MonoBehaviour
         {
             isMousePressed = false;
             opacidad = 1f;
+        }
+        if (Input.GetKeyDown(KeyCode.Return))//cunado le des al enter se activara la ventana
+        {
+            ventana();
         }
     }
     public void Arrastrar() //Hace la funcion de arrastar el raton cuando tienes presionado el boton click izquierdo
