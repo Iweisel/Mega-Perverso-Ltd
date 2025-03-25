@@ -6,7 +6,7 @@ Nombre del Proyecto: Snails (Gusano ludópata)
 Equipo Creador: Iker Rubio, Elliot Palestina, Lucas Ruiz, Daniel Fachero - OverTerrorsoft
 Fecha de Creación: 13/03/2025
 
-IDEA: Juego tipo "Worms" (Juego de estrategia por turnos en el que tienes un numero limitado de moviminetos y armas que puedes usar para eliminar a los elemigos, se juega en local) en el que la mecánica principal seria que las armas se consiguen a través de una especie de "Slot" de casino de forma aleatoria.
+IDEA: Juego tipo "Worms" (Juego de estrategia por turnos en el que tienes un numero limitado de movimientos y armas que puedes usar para eliminar a los enemigos, se juega en local) en el que la mecánica principal seria que las armas se consiguen a través de una especie de "Slot" de casino de forma aleatoria.
 
 2. Historial de Hackeos
 Hack 1 - OverTerrorsoft 13/03/2025-20/03/2025
@@ -47,7 +47,7 @@ La hitbox del personaje esta rara y habría que ajustarla
 
 Notas para el siguiente equipo:
 La idea era que tanto la temática del escenario como del resto del proyecto fuese con temática de casino, tipo maquina tragamonedas. También la idea inicial era hacerlo estilo pixel art pero como veais.
-A poder ser si os animais a hacer armas la idea era que fuesen referencias a otros juegos (Ex. Raygun de los zombies del Black Ops, Lanzaguisantes, Espada Maestra o Cuchillo del movimiento) No hay código para armas melee. 
+A poder ser si os animais a hacer armas la idea era que fuesen referencias a otros juegos (Ex. Raygun de los zombies del Black Ops, Lanzaguisantes, Espada Maestra o Cuchillo del movimiento) No hay código para armas omelete. 
 
 3. Instrucciones de Uso
 

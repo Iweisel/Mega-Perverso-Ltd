@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour, IDamageable
 {
@@ -18,6 +19,8 @@ public class Player_Controller : MonoBehaviour, IDamageable
     [Header("Scripts")]
     public PlayerAimAndShoot playerAim;
 
+    public Slider life;
+ 
     void Start()
     {
         // Obtiene el componente Rigidbody2D del jugador
@@ -80,5 +83,10 @@ public class Player_Controller : MonoBehaviour, IDamageable
             //Destroy(gameObject);
         }
 
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"); 
     }
 }
