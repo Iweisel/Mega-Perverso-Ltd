@@ -8,6 +8,8 @@ TagManager:
   - Player 2
   - Player 3
   - Player 4
+  - Coins
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,8 @@ public class Player_Controller : MonoBehaviour, IDamageable
     [Header("Scripts")]
     public PlayerAimAndShoot playerAim;
 
-    public Slider life;
+    public Slider lifeslider;
+    public int life = 3;
  
     void Start()
     {
@@ -27,6 +29,7 @@ public class Player_Controller : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
 
         currentHealth = maxHealth;
+        lifeslider.value = currentHealth;
     }
 
     void Update()
@@ -63,6 +66,16 @@ public class Player_Controller : MonoBehaviour, IDamageable
             ScoreManager.instance.AddScore(1);
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("Tus muertos");
+            currentHealth--;
+        }
+            lifeslider.value = currentHealth;
+        if (currentHealth <= 0f)
+        {
+                      Destroy(gameObject);
+        }
     }
 
     // Cuando el jugador deja de estar en contacto con el suelo, se marca como no en el suelo
@@ -80,13 +93,8 @@ public class Player_Controller : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
-
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"); 
+        
     }
 }

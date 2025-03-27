@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 805126692263797581}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   destroyTime: 3
   normalBulletSpeed: 15
   normalBulletDamage: 25
-  physicsBulletSpeed: 30
+  physicsBulletSpeed: 22.960102
   physicsBulletGravity: 3
   physicsBulletDamage: 50
   bulletType: 1
