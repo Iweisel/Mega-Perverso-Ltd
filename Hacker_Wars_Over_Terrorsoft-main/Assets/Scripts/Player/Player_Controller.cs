@@ -1,4 +1,7 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Player_Controller : MonoBehaviour, IDamageable
 {
@@ -15,6 +18,11 @@ public class Player_Controller : MonoBehaviour, IDamageable
 
     public bool isActivePlayer;
 
+    public GameObject player;
+    public Slider timeslider;
+    public float timeLimit = 10f; 
+    private float currentTime;
+
     [Header("Scripts")]
     public PlayerAimAndShoot playerAim;
 
@@ -22,8 +30,12 @@ public class Player_Controller : MonoBehaviour, IDamageable
     {
         // Obtiene el componente Rigidbody2D del jugador
         rb = GetComponent<Rigidbody2D>();
-
+        //timeslider = transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<Slider>();
         currentHealth = maxHealth;
+
+        currentTime = timeLimit; 
+        timeslider.maxValue = timeLimit; 
+        timeslider.value = timeLimit;
     }
 
     void Update()
@@ -43,8 +55,14 @@ public class Player_Controller : MonoBehaviour, IDamageable
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
         }
-    }
+        if (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            timeslider.value = currentTime;
 
+        }
+    }
+   
     // Comprueba si el jugador está en contacto con el suelo mediante colisiones
     void OnCollisionEnter2D(Collision2D collision)
     {
