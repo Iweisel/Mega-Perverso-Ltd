@@ -1,10 +1,15 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Este script está dentro de un prefab que se llama "Bullet"
 public class BulletBehaviour : MonoBehaviour
 {
+
+    public Slider sliderFuerza;
+
     [Header("General Bullet Stats")]
     [SerializeField] private LayerMask whatDestroysBullet;
     [SerializeField] private float destroyTime = 3f;
@@ -20,6 +25,7 @@ public class BulletBehaviour : MonoBehaviour
 
     private Rigidbody2D rb;
     private float damage;
+    
 
     public enum BulletType
     {
@@ -41,6 +47,12 @@ public class BulletBehaviour : MonoBehaviour
 
         // Cambia la velocidad en base al tipo de bala que se dispara
         InitializeBulletStats();
+    }
+
+    private void Update()
+    {
+      
+      
     }
 
     private void FixedUpdate()

@@ -33,6 +33,7 @@ public class Player_Controller : MonoBehaviour, IDamageable
             playerAim.HandleGunRotation();
             playerAim.HandleGunShooting();
 
+
             // Movimiento horizontal
             float moveInput = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);

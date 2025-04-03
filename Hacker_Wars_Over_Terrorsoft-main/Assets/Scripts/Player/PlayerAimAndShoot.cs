@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerAimAndShoot : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerAimAndShoot : MonoBehaviour
     private Vector2 worldPosition;
     private Vector2 direction;
     private float angle;
-    private float chargeSpeed;
+    public float chargeSpeed;
     private bool charging;
     private bool isWaitingForNextRound = false;
 
@@ -25,9 +26,10 @@ public class PlayerAimAndShoot : MonoBehaviour
     [Header("Scripts")]
     public Player_Controller player_Controller;
     public RNG_Controller rng_Controller;
+    public RNG_Controller rng_Player2;
     public BulletBehaviour bulletBehaviour;
-
-
+    public Slider Fuerza_Player1;
+    public GameObject SliderFuerza;
     private void Start()
     {
         numOfShots = maxShots; // Inicializamos el contador de disparos
@@ -35,7 +37,7 @@ public class PlayerAimAndShoot : MonoBehaviour
 
     private void Update()
     {
-
+        
     }
 
     public void HandleGunRotation()
@@ -64,8 +66,9 @@ public class PlayerAimAndShoot : MonoBehaviour
     public void HandleGunShooting()
     {
 
-        if (Input.GetMouseButtonDown(0) && numOfShots > 0)
+        if (Input.GetMouseButtonDown(0) && numOfShots > 0)//Si mantenemos el boton izquierdo del raton, y el numero de disparos es mayor que 0
         {
+            SliderFuerza.SetActive(true); //Activa el Slider de fuerza del Player (Que Aparece)
             bulletBehaviour.physicsBulletSpeed = 0f;
             charging = true;
             Debug.Log("Pulado");
@@ -76,11 +79,14 @@ public class PlayerAimAndShoot : MonoBehaviour
             bulletBehaviour.physicsBulletSpeed = chargeSpeed;
             bulletInst = Instantiate(bullet, bulletSpawnPoint.position, gun.transform.rotation);
             Debug.Log("Soltado con una fuerza de " + chargeSpeed);
+            Fuerza_Player1.value = 0f; //Al soltar la carga vuelve a cero la carga 
+            SliderFuerza.SetActive(false); //Desactiva el Slider de fuerza del player (Que Desaperece)
             charging = false;
         }
-        if (charging)
+        if (charging == true)
         {
             chargeSpeed = bulletBehaviour.physicsBulletSpeed += 10f * Time.deltaTime;
+            Fuerza_Player1.value = chargeSpeed; //Carga la fuerza del disparo del personaje 1   
         }
         if (numOfShots == 0)
         {
@@ -89,7 +95,7 @@ public class PlayerAimAndShoot : MonoBehaviour
             StartCoroutine(WaitAndChangeRound());
         }
     }
-
+   
 
     private IEnumerator WaitAndChangeRound() // Nabegos no está de acuerdo
     {

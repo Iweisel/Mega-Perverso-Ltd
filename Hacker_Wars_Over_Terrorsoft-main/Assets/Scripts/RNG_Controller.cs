@@ -14,6 +14,7 @@ public class RNG_Controller : MonoBehaviour
 
     int selectedPlayerIndex;
     int playerRotation;
+    PlayerAimAndShoot playeraimshoot;
 
     float timer; // Cuenta el time delta time
     public int roundTime; // El temporizador que cuenta el tiempo restante del jugador
