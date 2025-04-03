@@ -127,6 +127,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6187321292735361722, guid: bcf1f364322a594498529799f325819d, type: 3}
   m_PrefabInstance: {fileID: 1990133560}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &71041035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8131299339229442812, guid: bcf1f364322a594498529799f325819d, type: 3}
+  m_PrefabInstance: {fileID: 5619699528530711005}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &102666287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,9 +1021,10 @@ GameObject:
   - component: {fileID: 683335355}
   - component: {fileID: 683335357}
   - component: {fileID: 683335358}
+  - component: {fileID: 683335359}
   m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
+  m_Name: sopa
+  m_TagString: Olla
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1149,6 +1161,21 @@ PolygonCollider2D:
       - {x: 0.29296875, y: 0.40234375}
       - {x: 0.15234375, y: 0.47265625}
   m_UseDelaunayMesh: 0
+--- !u!114 &683335359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683335354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91eeeea792503864499c8b7c25f2b736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sopa: {fileID: 683335354}
+  timeslider: {fileID: 71041035}
+  bullet: {fileID: 6948235984686652840, guid: 0d50ebdc63081ca47ad2cdeb7947ba3c, type: 3}
 --- !u!1001 &690002922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3592,6 +3619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2141249703}
   - component: {fileID: 2141249702}
+  - component: {fileID: 2141249704}
   m_Layer: 0
   m_Name: olla
   m_TagString: Untagged
@@ -3667,6 +3695,21 @@ Transform:
   - {fileID: 683335355}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2141249704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141249701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91eeeea792503864499c8b7c25f2b736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sopa: {fileID: 0}
+  timeslider: {fileID: 0}
+  bullet: {fileID: 0}
 --- !u!1001 &5619699528530711005
 PrefabInstance:
   m_ObjectHideFlags: 0

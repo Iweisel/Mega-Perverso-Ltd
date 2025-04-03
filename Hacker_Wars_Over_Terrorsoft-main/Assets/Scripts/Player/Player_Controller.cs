@@ -22,6 +22,7 @@ public class Player_Controller : MonoBehaviour, IDamageable
     public Slider timeslider;
     public float timeLimit = 20f; 
     private float currentTime;
+    public float timeToAdd;
    
 
     [Header("Scripts")]
@@ -64,6 +65,15 @@ public class Player_Controller : MonoBehaviour, IDamageable
             {
               //player.SetActive(false);
             }
+        }
+    }
+    public void Sumartiempo()
+    {
+        currentTime += timeToAdd;
+        if (currentTime > timeLimit)
+        {
+            currentTime = timeLimit;
+            timeslider.value = currentTime;
         }
     }
 

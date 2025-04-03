@@ -86,4 +86,17 @@ public class RNG_Controller : MonoBehaviour
             timer = 0;
         }
     }
+
+    public void BulletCollisionOnSoup()
+    {
+        foreach (GameObject player in Players)
+        {
+
+            if (player.GetComponent<Player_Controller>().isActivePlayer == true)
+            {
+                player.GetComponent<Player_Controller>().Sumartiempo();
+            }
+        }
+
+    }
 }
