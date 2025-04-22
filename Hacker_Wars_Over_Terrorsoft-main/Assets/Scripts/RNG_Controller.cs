@@ -46,7 +46,6 @@ public class RNG_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         // El timer
         timer += Time.deltaTime;
         if (roundTime >= 0)
@@ -69,7 +68,6 @@ public class RNG_Controller : MonoBehaviour
         playerRotation = (playerRotation + 1) % Players.Length;
         // Setea seletedPlayer al jugador actual
         GameObject selectedPlayer = Players[playerRotation];
-
         // Accede al script del jugador actual
         playerController = selectedPlayer.GetComponent<Player_Controller>();
         Debug.Log("Selected Player: " + selectedPlayer.name);
@@ -86,18 +84,5 @@ public class RNG_Controller : MonoBehaviour
             roundTime--;
             timer = 0;
         }
-    }
-
-    public void BulletCollisionOnSoup()
-    {
-        foreach (GameObject player in Players)
-        {
-
-            if (player.GetComponent<Player_Controller>().isActivePlayer == true)
-            {
-                player.GetComponent<Player_Controller>().Sumartiempo();
-            }
-        }
-
     }
 }
