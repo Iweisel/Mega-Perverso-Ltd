@@ -12,7 +12,7 @@ public class BulletBehaviour : MonoBehaviour
 
     [Header("General Bullet Stats")]
     [SerializeField] private LayerMask whatDestroysBullet;
-    [SerializeField] private float destroyTime = 3f;
+    [SerializeField] private float destroyTime = 1f;
 
     [Header("Normal Bullet Stats")]
     [SerializeField] private float normalBulletSpeed = 15f;

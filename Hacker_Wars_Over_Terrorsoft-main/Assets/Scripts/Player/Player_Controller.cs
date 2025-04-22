@@ -1,11 +1,14 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Player_Controller : MonoBehaviour, IDamageable
 {
     [Header("Parámetros del Jugador")]
     [SerializeField] private float maxHealth = 100f;
     private float currentHealth;
-   
+
     public float speed = 5f;       // Velocidad de movimiento horizontal
     public float jumpForce = 5f;   // Fuerza aplicada al saltar
     public int coinValue; //Valor de la coin
@@ -14,6 +17,13 @@ public class Player_Controller : MonoBehaviour, IDamageable
     private bool isGrounded = false; // Indica si el jugador está en el suelo
 
     public bool isActivePlayer;
+
+    public GameObject player;
+    public Slider timeslider;
+    public float timeLimit = 20f; 
+    private float currentTime;
+    public float timeToAdd;
+   
 
     [Header("Scripts")]
     public PlayerAimAndShoot playerAim;
@@ -24,8 +34,12 @@ public class Player_Controller : MonoBehaviour, IDamageable
     {
         // Obtiene el componente Rigidbody2D del jugador
         rb = GetComponent<Rigidbody2D>();
-
+        //timeslider = transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<Slider>();
         currentHealth = maxHealth;
+
+         currentTime = timeLimit; 
+         timeslider.maxValue = timeLimit; 
+         timeslider.value = timeLimit;
     }
 
     void Update()
@@ -46,7 +60,27 @@ public class Player_Controller : MonoBehaviour, IDamageable
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
+            if (currentTime > 0)
+            {
+              currentTime -= Time.deltaTime;
+              timeslider.value = currentTime;
+            }
+            if (currentTime <= 0)
+            {
+              //player.SetActive(false);
+            }
         }
+    }
+    public void Sumartiempo()
+    {
+        Debug.Log(currentTime+" "+timeToAdd);
+        currentTime += timeToAdd;
+        if (currentTime > timeLimit)
+        {
+            currentTime = timeLimit;
+        }
+        timeslider.value = currentTime;
+        Debug.Log(currentTime);
     }
 
     // Comprueba si el jugador está en contacto con el suelo mediante colisiones
@@ -56,6 +90,7 @@ public class Player_Controller : MonoBehaviour, IDamageable
         if (collision.gameObject.CompareTag("Floor"))
         {
             isGrounded = true;
+
         }
 
         //Detecta si hay colision con cualquier objeto con tag Coins y si existe esa colision añade 1 punto al scoreTotal y destruye el objeto
