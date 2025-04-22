@@ -23,7 +23,7 @@ public class Olla_cntrl : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)//Detecta la colisión del bullet cuando le da a la olla
     {        
         if (collision.gameObject.CompareTag("Bullet"))
         {

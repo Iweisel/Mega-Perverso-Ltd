@@ -54,3 +54,32 @@ A poder ser si os animais a hacer armas la idea era que fuesen referencias a otr
 WASD --> Movimineto 
 E --> (Test) cambiar de ronda
 I --> Inventario  
+
+Hack #2 - Equipo "Mega Perverso Ltd" - 22/04/2025
+
+¿Qué hemos cambiado?
+Hemos cambiado toda la dinámica del juego. En un principio íbamos a continuar con la idea que nos había dado el equipo anterior, pero después de encontrarnos con varios problemas, decidimos darle una vuelta al juego y cambiar la temática y añadiendo mecánicas.
+Hemos cambiado la temática del juego de un shooter a un juego estilo la patata caliente, en el que todos los jugadores tratan de mantenerse con vida en vez de matarse entre ellos.
+Para lograr nuestro objetivo final hemos añadido las siguientes cosas:
+Raúl: ha hecho un medidor de fuerza, para saber cuanto tiempo mantienes pulsado el click y cómo de lejos llegará la bala y partículas en todos los movimientos del personaje y en la estela de la bala al disparar.
+Laura: partículas de la olla, los sliders del player que miden el tiempo que le queda de vida a cada player y conforme más tiempo pasa, disminuye, además al cambiar de player se para tu tiempo y continúa el del siguiente.
+Miguel: ha modificado y arreglado las hitbox de los personajes, ha realizado los dibujos del mapa y ha hecho el parallax del fondo.
+Iguacel: ha hecho la olla, es decir, ha creado la olla con sus correspondientes collider y luego ha conseguido que sí choca una bala de cualquier jugador le suma tiempo al que haya disparado.
+
+
+¿Cómo lo hemos hecho?
+Para el medidor de fuerza hemos hecho un slider y hemos llamado al script que tiene la potencia de la bala para que calcule la fuerza que está ejerciendo. 
+Para el slider que mide el tiempo ha sido crear un slider que cuente de 20 hacia atrás y lo muestra con el value, cuando cambia de personaje su slider se para y el código detecta mediante una lista que player está activo y así su tiempo disminuye.
+Para la olla hemos creado una función en la que se controla el tiempo de cada jugador, es decir, si la bala colisiona con la olla se añade tiempo; para lograr este resultado hemos puesto un tag de bullet en la bullet y en ese mismo script de la olla hemos llamado al script del RNG_Controller donde se encuentra una lista de los players que se activa y se desactiva conforme pasa el tiempo establecido y que sabe que player ha disparado en la olla.
+Las partículas ha sido añadirlas donde queriamos que aparecieran, en el caso del los players había que meterlos dentro o dentro del bullet para que deje una estela.
+
+¿Qué problemas hemos encontrado?
+En un principio continuamos con la idea que tenía el grupo anterior sobre el juego, pero llegó a un punto en el que la idea no nos terminó de convencer. Entonces decidimos cambiar la temática y añadirle otras mecánicas.
+Al añadirle el slider del tiempo al prefab del player no bajaba el tiempo, además queríamos que al cambiar de personaje se parase el del resto porque era el “turno” del otro.
+También tuvimos bastantes inconvenientes con la olla ya que cuando disparas no le sumaba el tiempo conseguido al player correspondiente.
+
+NOTAS
+
+Hay que poner un muro invisible debajo de la sopa para que el player no pueda disparar desde abajo.
+Quitar el segundo disparo.
+Buena suerte.

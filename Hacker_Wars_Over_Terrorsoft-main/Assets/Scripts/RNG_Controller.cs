@@ -87,12 +87,12 @@ public class RNG_Controller : MonoBehaviour
         }
     }
 
-    public void BulletCollisionOnSoup()
+    public void BulletCollisionOnSoup()//Para que sepa que personaje le ha disparado a la olla
     {
         foreach (GameObject player in Players)
         {
 
-            if (player.GetComponent<Player_Controller>().isActivePlayer == true)
+            if (player.GetComponent<Player_Controller>().isActivePlayer == true)//Aquí mira en el script del player controller cuando se activa cada player
             {
                 player.GetComponent<Player_Controller>().Sumartiempo();
             }

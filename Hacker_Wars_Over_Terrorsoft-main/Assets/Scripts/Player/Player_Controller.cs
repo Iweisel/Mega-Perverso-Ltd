@@ -34,7 +34,7 @@ public class Player_Controller : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         //timeslider = transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<Slider>();
         currentHealth = maxHealth;
-
+        //Le dice cual es el límite del tiempo para que pueda bajar el value
          currentTime = timeLimit; 
          timeslider.maxValue = timeLimit; 
          timeslider.value = timeLimit;
@@ -67,11 +67,11 @@ public class Player_Controller : MonoBehaviour, IDamageable
             }
         }
     }
-    public void Sumartiempo()
+    public void Sumartiempo()//Función que usa el control de la olla para sumar tiempo al player
     {
         Debug.Log(currentTime+" "+timeToAdd);
         currentTime += timeToAdd;
-        if (currentTime > timeLimit)
+        if (currentTime > timeLimit)// Para que cuando sume no se pase del tiempo límite del player
         {
             currentTime = timeLimit;
         }
