@@ -297,6 +297,7 @@ MonoBehaviour:
   player: {fileID: 6187321292735361722}
   timeslider: {fileID: 8131299339229442812}
   timeLimit: 20
+  timeToAdd: 2
   playerAim: {fileID: 4204004546059878848}
 --- !u!114 &4204004546059878848
 MonoBehaviour:

@@ -27,7 +27,7 @@ public class Olla_cntrl : MonoBehaviour
     {        
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("asdokvnados´knv");
+            Debug.Log("choka bellaka");
             controller.BulletCollisionOnSoup();
         }
     }

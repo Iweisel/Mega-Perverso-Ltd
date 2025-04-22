@@ -69,12 +69,14 @@ public class Player_Controller : MonoBehaviour, IDamageable
     }
     public void Sumartiempo()
     {
+        Debug.Log(currentTime+" "+timeToAdd);
         currentTime += timeToAdd;
         if (currentTime > timeLimit)
         {
             currentTime = timeLimit;
-            timeslider.value = currentTime;
         }
+        timeslider.value = currentTime;
+        Debug.Log(currentTime);
     }
 
     // Comprueba si el jugador está en contacto con el suelo mediante colisiones

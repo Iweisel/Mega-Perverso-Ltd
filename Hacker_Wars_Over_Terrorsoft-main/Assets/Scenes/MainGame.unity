@@ -1176,6 +1176,7 @@ MonoBehaviour:
   sopa: {fileID: 683335354}
   timeslider: {fileID: 71041035}
   bullet: {fileID: 6948235984686652840, guid: 0d50ebdc63081ca47ad2cdeb7947ba3c, type: 3}
+  controller: {fileID: 711674368}
 --- !u!1001 &690002922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3707,9 +3708,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91eeeea792503864499c8b7c25f2b736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sopa: {fileID: 0}
-  timeslider: {fileID: 0}
-  bullet: {fileID: 0}
+  sopa: {fileID: 683335354}
+  timeslider: {fileID: 71041035}
+  bullet: {fileID: 6948235984686652840, guid: 0d50ebdc63081ca47ad2cdeb7947ba3c, type: 3}
+  controller: {fileID: 711674368}
 --- !u!1001 &5619699528530711005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3785,6 +3787,10 @@ PrefabInstance:
     - target: {fileID: 6187321292735361722, guid: bcf1f364322a594498529799f325819d, type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607873382989737005, guid: bcf1f364322a594498529799f325819d, type: 3}
+      propertyPath: timeToAdd
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
