@@ -18,6 +18,8 @@ public class Player_Controller : MonoBehaviour, IDamageable
     [Header("Scripts")]
     public PlayerAimAndShoot playerAim;
 
+    //[SerializeField] private ParticleSystem particulas;
+
     void Start()
     {
         // Obtiene el componente Rigidbody2D del jugador
@@ -37,6 +39,7 @@ public class Player_Controller : MonoBehaviour, IDamageable
             // Movimiento horizontal
             float moveInput = Input.GetAxis("Horizontal");
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
 
             // Salto: se activa cuando se presiona la tecla "Salto" y el jugador está en el suelo
             if (Input.GetButtonDown("Jump") && isGrounded)
