@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ALLY_SPAWNER : MonoBehaviour
 {
+    public Slider slider;
     public GameObject allyprefab;
-    PLAYER_MOVEMENT pm;
+    public float aparecer;
+    public float vaciar;
+      PLAYER_MOVEMENT pm;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +19,7 @@ public class ALLY_SPAWNER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+      slider.value-= vaciar / 10 * Time.deltaTime;
     }
     public void GenerateAlly()
     {
@@ -25,4 +29,11 @@ public class ALLY_SPAWNER : MonoBehaviour
             pm._dropCount -= 20;
         }
     }
+
+   IEnumerator reaparecer()
+   {
+        slider.gameObject.SetActive(false);  
+        yield return new WaitForSeconds(aparecer);
+        slider.gameObject.SetActive(true);  
+   }
 }
