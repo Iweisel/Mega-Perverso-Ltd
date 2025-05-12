@@ -3231,6 +3231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637160947}
   - component: {fileID: 1637160948}
+  - component: {fileID: 1637160949}
   m_Layer: 0
   m_Name: Prota Gnomo
   m_TagString: Untagged
@@ -3247,8 +3248,8 @@ Transform:
   m_GameObject: {fileID: 1637160946}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0069999695, y: 0.24999997, z: 0}
-  m_LocalScale: {x: 0.39012, y: 0.39012006, z: 0.39012}
+  m_LocalPosition: {x: -0.006999969, y: 0.25, z: 0}
+  m_LocalScale: {x: 0.39012, y: 0.3901201, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1203768679}
@@ -3305,6 +3306,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1637160949
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637160946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93449688e75da4344abed238f7844afb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1842726297
 GameObject:
   m_ObjectHideFlags: 0
