@@ -1,29 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ALLY_SPAWNER : MonoBehaviour
 {
-    public Slider slider;
     public GameObject allyprefab;
-    
-      PLAYER_MOVEMENT pm;
-   
+    PLAYER_MOVEMENT pm;
     // Start is called before the first frame update
     void Start()
     {
         pm = FindAnyObjectByType<PLAYER_MOVEMENT>();
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-      
-    }
-   
 
+    }
     public void GenerateAlly()
     {
         if (pm._dropCount >= 20)
@@ -32,6 +25,4 @@ public class ALLY_SPAWNER : MonoBehaviour
             pm._dropCount -= 20;
         }
     }
-
- 
 }
