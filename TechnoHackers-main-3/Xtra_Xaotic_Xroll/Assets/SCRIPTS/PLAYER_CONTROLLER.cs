@@ -24,12 +24,17 @@ public class PLAYER_MOVEMENT : MonoBehaviour
     public TextMeshProUGUI resourceCounter;
     public int playerLife = 100;
 
+    Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
         // Desactivamos el panel del Vault y pillamos el RigidBody
         vaultmenu.SetActive(false);
         _rb = GetComponent<Rigidbody2D>();
+
+        animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,6 +55,10 @@ public class PLAYER_MOVEMENT : MonoBehaviour
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
             _jumpCount++;
+        }
+        if (Input.GetMouseButton(0))
+        {
+            animator.SetTrigger("Attack");
         }
 
         resourceCounter.text = _dropCount.ToString("F0");
