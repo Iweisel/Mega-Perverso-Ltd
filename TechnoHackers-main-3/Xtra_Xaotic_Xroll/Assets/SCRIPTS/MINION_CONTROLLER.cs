@@ -36,8 +36,10 @@ public class MINION_CONTROLLER : MonoBehaviour
         //{
         //    this.gameObject.transform.Translate(2 * Time.deltaTime, 0, 0);
         //}
+    
         barraVidaMinion.value = minionHealth;
     }
+   
 
     public IEnumerator GetDamage()
     {
