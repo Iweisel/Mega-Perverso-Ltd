@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ENEMY_SPAWNER : MonoBehaviour
 {
@@ -8,13 +9,14 @@ public class ENEMY_SPAWNER : MonoBehaviour
     public GameObject tankEnemyprefab;
     public float generationTime = 5f;
     public int waveRound;
+
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("GenerateEnemy", 0f, generationTime);
         InvokeRepeating("GenerateTank", 2f, generationTime);
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,4 +32,5 @@ public class ENEMY_SPAWNER : MonoBehaviour
         Instantiate(tankEnemyprefab, transform.position, Quaternion.identity);
     }
 
+       
 }
