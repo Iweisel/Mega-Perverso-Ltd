@@ -651,12 +651,13 @@ MonoBehaviour:
   nivelChoza: 0
   Active: 1
   barraVidaChoza: {fileID: 5549242337436127128}
-  chozaHealth: -105
+  chozaHealth: 50
   maxChozaHealth: 50
   repairButton: {fileID: 6043616801807726298}
   repairTime: 2
-  woodAmount: 100
   repairCostPerHealth: 10
+  player: {fileID: 0}
+  repairparticles: {fileID: 0}
 --- !u!61 &9176413871976995917
 BoxCollider2D:
   m_ObjectHideFlags: 0

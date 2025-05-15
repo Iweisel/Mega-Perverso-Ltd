@@ -22,6 +22,8 @@ public class PLAYER_MOVEMENT : MonoBehaviour
     public int _dropCount;
     public int woodCount;
     public TextMeshProUGUI resourceCounter;
+    public TextMeshProUGUI resourceCounter2;
+    public TextMeshProUGUI resourceCounter3;
     public int playerLife = 100;
 
     Animator animator;
@@ -61,7 +63,9 @@ public class PLAYER_MOVEMENT : MonoBehaviour
             animator.SetTrigger("Attack");
         }
 
-        resourceCounter.text = _dropCount.ToString("F0");
+        resourceCounter.text = _dropCount.ToString("F0"); //Añade la puntuacion de la moneda al menu de la base
+        resourceCounter2.text = _dropCount.ToString("f1"); //Añade la puntuacion de la moneda al contador de moneda
+        resourceCounter3.text = woodCount.ToString("f2"); //
     }
     void FlipSprite(float direction)
     {

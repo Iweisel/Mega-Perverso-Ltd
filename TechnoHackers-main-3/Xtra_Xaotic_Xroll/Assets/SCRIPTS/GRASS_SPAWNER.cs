@@ -6,7 +6,8 @@ public class GRASS_SPAWNER : MonoBehaviour
 {
     public GameObject grassSpawner;
     public int randomSpawn;
-   
+    public float respawnTime = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class GRASS_SPAWNER : MonoBehaviour
         {
             grassSpawner.transform.GetChild(i).gameObject.SetActive(false);// descativa todos los seto(GRASS) al comenzar
         }
-
+        StartCoroutine(RespawnGrass()); //llama a la funcion RespawnGrass
     }
 
     // Update is called once per frame
@@ -38,6 +39,13 @@ public class GRASS_SPAWNER : MonoBehaviour
             grassSpawner.transform.GetChild(Random.Range(0, grassSpawner.transform.childCount)).gameObject.SetActive(true);
         }
     }
-    
-    
+    private IEnumerator RespawnGrass()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(respawnTime);
+            SpawnRandomGrass(); // Llama a la función de reaparición
+        }
+    }
+
 }
