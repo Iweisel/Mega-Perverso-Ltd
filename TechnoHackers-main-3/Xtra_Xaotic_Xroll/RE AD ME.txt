@@ -37,3 +37,135 @@ Con los recursos que consigues de los enemigos, puedes generar tropas y torretas
 3. Instrucciones de Uso
 - Los controles son los básicos de cruceta / WASD, espacio y clics.
 
+Hack # 0.2 - Techno Evil Corp - 22 Abril 2025
+
+
+¿Qué hemos cambiado?:
+
+
+Jorge: 
+
+Arreglar el ataque del player metiendo cooldown entre golpe y golpe.
+
+Animación de los drops.
+
+Sistema de comprar aliados.
+
+Drop de madera.
+
+ 
+
+Dario: 
+
+Añadir un nuevo enemigo darles ataque y vida.
+
+Añadir una estructura nueva que genera aliados que se puede reparar con madera.
+
+
+Héctor:
+
+ Terminar torres, hacerlas funcionales.
+
+ Añadir colisiones y barras de vida a las torres.
+
+ Añadir imágenes a las barras de vida.
+
+ Arreglar posición de los spawners de aliados y enemigos.
+
+
+Sergio:
+
+ Arreglar aliados, añadirles ataque y vida.
+
+ Barras de vida de aliados y enemigos.
+
+Añadir imagen al minimapa.
+
+Aparición aleatoria de arbustos y poder eliminarlos.
+
+Particulas drop amarillo
+
+Arreglar colisiones entre aliados, enemigos y drops
+
+
+El juego ahora tiene dos fases, noche y dia:(las fases aún no están juntan separadas, hay unos scripts, pero no están implementados)
+
+
+Durante el día salen unos setos aleatoriamente los cuales puedes talar haciendo click y cuando los talas del todo suelta un drop de madera el cual sirve para comprar las chozas.
+
+Una vez pase el tiempo establecido del día, se pasa a la noche.
+
+
+Durante la noche, salen los enemigos(actualmente hay 2 uno con menos vida y otro más grande con más vida).
+
+
+Hemos añadido vida y ataque a los aliados y enemigos, además de hacer funcionar el sistema de compra de aliados.
+
+
+Además de los aliados también puedes comprar una choza(estilo choza de duendes clash royale) de la cual sales aliados y la puedes reparar. Actualmente la choza es solo un prefab, hace falta añadir que se spawnee al comprarlo.
+
+Hemos añadido cooldowns a los ataques para que sea más jugable, hemos añadido animación a los drops para que no se coja automáticamente nada más spawnear.
+
+
+
+¿Cómo lo hemos hecho?:
+
+Para los arbustos “Grass” hay 2 scripts, GRASS_CONTROLLER sirve para aleatorizar donde salen los arbustos y cuantos salen cada vez, y GRASS_SPAWNER que sirve para que aparezcan los arbustos.
+
+
+para cada enemigo y cada aliado hay un script propio, TANKENEMY_CONTROLLER, MINION_CONTROLLER, ALIADO_CONTROLER( en caso de crear uno nuevo, se pueden reutilizar mecánicas ya que comparten bastantes)
+
+
+El cooldown del ataque lo hemos creado en cada uno de los scripts anteriores nombrados.
+
+
+
+
+¿Qué problemas hemos encontrado?:
+
+
+varios problemas al mergear las ramas, por lo que habrá scripts sueltos los cuales no habían sido añadidos, pero tienen funciones.
+
+
+Notas para el siguiente equipo:
+
+
+Buena suerte:)
+
+(OPCIONAL)
+
+añadir vida a las torres ya que no hemos podido mergear las ramas,
+
+ habrá que añadir la funcionalidad de día y noche ya que no se ha podido mergear bien tampoco.
+
+añadir la choza de duendes para que se pueda comprar
+
+Hacer oleadas y hacer que el juego sea “infinito” es decir a ver hasta cuantas rondas puedes durar.
+
+
+
+3. Instrucciones de Uso
+
+- Los controles son los básicos de cruceta / WASD, espacio y clics.
+Hack #3 - Equipo "Mega Perverso Ltd" - 13/05/2025
+
+¿Qué hemos cambiado?
+No hemos cambiado nada, simplemente hemos mejorado y arreglado las mecánicas ya existentes para dar una mejor experiencia al jugador.
+Laura: ha puesto dos animaciones la de IDLE y la de ataque, además ha añadido partículas en la base del jugador y en la del enemigo.
+Raúl: ha conseguido que se muestre el recuento de las monedas y de la madera sin necesidad de entrar al menú, además ha hecho que spawnee la choza cuando la compras.
+Miguel: ha mejorado el ataque y la vida de los aliados y enemigos.
+Iguacel: ha incorporado vida a las dos torres y ha añadido el sistema de quitar vida cuando el enemigo le ataca.
+
+¿Cómo lo hemos hecho?
+Laura ha hecho dos animaciones en el animation y luego en el animator les ha puesto una transición del IDLE al ataque y luego en el código que cuando ataque el player pase de la animación IDLE al ataque, además de haber puesto dos particules system y haberlas modificado para que queden bonitas.
+Iguacel ha creado dos canvas para colocarlos en ambas torres y luego dentro ha creado un slider con un script conjunto donde se controla la vida de las torres que funciona de tal manera que cuando un enemy colisione con la torre le baje la vida del slider.
+Raúl ha hecho que los árboles aparecieran aleatoriamente con un public void Ienumerator, aparecen de normal entre 3 a 4 árboles en un tiempo de 5 segundos. También ha creado dos textos donde aparecen la madera y las monedas y en las chozas ha conseguido que con un botón spawneen chozas cerca de la base con distancia para que no se solapen.
+Miguel ha mejorado el ataque y la vida de los aliados y enemigos para ello ha añadido un trigger2D al script del enemy spawner para que dependiendo del tipo de enemigo quitase más o menos vida; en el caso de los aliados añadiese más ataque y activar una función que no estaba declara antes.
+
+¿Qué problemas hemos encontrado?
+En la animación no hacía el ataque cuando se le daba click y al poner el código de forma correcta si que lo hacía. Para los slider hemos tenido que hacer un script nuevo y una vez que lo hemos metido en el sitio correcto ya funcionaba todo bien. Además al generar la choza daba un error en la zona de reparaciones. 
+
+NOTAS
+No queda por arreglar nada ya sería únicamente añadir detalles y mejorar el diseño.
+
+
